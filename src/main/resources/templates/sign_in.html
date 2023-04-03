@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<body>
+<div th:fragment="signFrag">
+    <div th:if="${session.user == null}">
+        <form method="post" action="/sign/in">
+            <div class="mb-3">
+                <label for="input_ID" class="form-label">ID</label>
+                <input type="text" class="form-control" id="input_ID" name="userId">
+            </div>
+            <div class="mb-3">
+                <label for="input_PW" class="form-label">Password</label>
+                <input type="password" class="form-control" id="input_PW" name="userPw">
+            </div>
+            <div class="text-center mb-3">
+                <button type="submit" class="btn btn-primary text-center">Sign in</button>
+                <a href="/sign/up" class="btn btn-primary">Sign up</a>
+            </div>
+        </form>
+    </div>
+    <div th:if="${session.user != null}">
+        <div class="mb-1 text-center">
+            <label for="nick" class="form-label">별명</label>
+            <a class="text-decoration-none" id="nick" th:text="${session.user.nick}"></a>
+        </div>
+        <div class="mb-1 text-center">
+            <label for="createdAt" class="form-label">가입일</label>
+            <a class="text-decoration-none" id="createdAt" th:text="${session.user.createdAt}"></a>
+        </div>
+        <div class="mb-3 text-center">
+            <button class="btn btn-primary" id="signOut_btn">Sign out</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
