@@ -18,5 +18,5 @@ naver:
       local: https://openapi.naver.com/v1/search/local.json
       image: https://openapi.naver.com/v1/search/image
   client:
-    id: D4k9_Uc9V4XTjrhZC2FA
-    secret: P0XxyeAczy
+    id: 
+    secret: 
